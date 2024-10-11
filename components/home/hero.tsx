@@ -53,7 +53,7 @@ export default function Hero() {
           <div className="flex items-center justify-center">
             <div className="relative w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[500px] lg:h-[500px]">
               <Image
-                src="/placeholder.svg"
+                src="https://avatars.githubusercontent.com/u/72305492?v=4"
                 alt="Sadman Shakib - Next.js Developer"
                 fill
                 className="object-cover rounded-full border-4 border-teal-400"
