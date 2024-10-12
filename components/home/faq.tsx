@@ -54,7 +54,7 @@ export default function FAQSection() {
                   className="w-full flex justify-between items-center text-left bg-transparent hover:bg-purple-700 text-purple-50"
                   onClick={() => toggleFAQ(index)}
                 >
-                  <span className="font-semibold">{faq.question}</span>
+                  <span className="font-semibold text-wrap">{faq.question}</span>
                   {openIndex === index ? (
                     <ChevronUp className="h-5 w-5 text-teal-400" />
                   ) : (

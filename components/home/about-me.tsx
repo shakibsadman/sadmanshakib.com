@@ -32,7 +32,7 @@ export default function AboutMe() {
   ];
 
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-purple-900">
+    <section id="about" className="w-full py-12 md:py-24 lg:py-32 bg-purple-900">
       <div className="container px-4 md:px-6 mx-auto">
         <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12 text-purple-50">
           About <span className="text-teal-400">Me</span>
@@ -55,11 +55,15 @@ export default function AboutMe() {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-teal-400">Personal Background</h3>
                 <p className="text-purple-100">
-                  Born and raised in Dhaka, Bangladesh, I discovered my passion for coding during my
-                  teenage years. I hold a Bachelor&apos;s degree in Computer Science from Bangladesh
-                  University of Engineering and Technology. When I&apos;m not coding, you can find
+                  Born and raised in Bangladesh, I discovered my passion for coding during my
+                  teenage years. I hold a Doctor of Veterinary Medicine (DVM) degree from Hajee
+                  Mohammad Danesh Science and Technology University. My unique background as a
+                  veterinarian combined with my love for programming allows me to bring a
+                  distinctive perspective to tech projects. When I&apos;m not coding, you can find
                   me exploring new hiking trails, experimenting with fusion cooking, or contributing
-                  to open-source projects.
+                  to open-source projects. My journey from veterinary medicine to software
+                  development demonstrates my adaptability and commitment to pursuing my
+                  demonstrates my adaptability and commitment to pursuing my passions.
                 </p>
               </CardContent>
             </Card>
