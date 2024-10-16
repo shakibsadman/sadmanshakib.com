@@ -1,46 +1,45 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Github, ExternalLink } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
+import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
 import Link from "next/link";
 
 const projects = [
   {
     id: 1,
-    title: "E-commerce Platform",
+    title: "YNAB Clone",
     description:
-      "A full-stack e-commerce solution built with Next.js, featuring real-time inventory updates and seamless payment integration.",
-    image: "/placeholder.svg",
-    tags: ["Next.js", "React", "Node.js", "MongoDB", "Stripe"],
-    githubLink: "https://github.com/sadmanshakib/ecommerce-platform",
-    liveLink: "https://ecommerce-platform-demo.vercel.app",
+      "A clone of You Need A Budget (YNAB) built with Next.js, React, Node.js, PostgreSQL, and NextAuth.",
+    image: "/images/ynab-01.png",
+    tags: ["Next.js", "React", "Node.js", "PostgreSQL", "NextAuth"],
+    githubLink: "https://github.com/shadmanshakib/ynab-clone",
+    liveLink: "https://youtu.be/wV2ZV5vnJkc",
   },
   {
     id: 2,
-    title: "Task Management App",
-    description:
-      "A collaborative task management application with real-time updates, drag-and-drop functionality, and team chat features.",
-    image: "/placeholder.svg",
-    tags: ["React", "Firebase", "Material-UI", "WebSockets"],
-    githubLink: "https://github.com/sadmanshakib/task-management-app",
-    liveLink: "https://task-app-demo.netlify.app",
+    title: "Admin Dashboard",
+    description: "A responsive admin dashboard built with Next.js, Shadcn UI, and Supabase.",
+    image: "/images/admin-dashboard.png",
+    tags: ["Next.js", "Shadcn UI", "TailwindCSS", "React", "Zustand"],
+    githubLink: "https://github.com/shadmanshakib/admin-dashboard",
+    liveLink: "https://shakib-admin.vercel.app/p",
   },
   {
     id: 3,
-    title: "AI-powered Content Generator",
-    description:
-      "An innovative content generation tool leveraging OpenAI's GPT-3 to create high-quality, SEO-optimized blog posts and articles.",
-    image: "/placeholder.svg",
-    tags: ["Next.js", "OpenAI API", "TailwindCSS", "Vercel AI SDK"],
+    title: "Linkaraby",
+    description: "An dashboard for affiliate marketing company.",
+    image: "/images/linkaraby-01.png",
+    tags: ["Next.js", "Shadcn UI", "TailwindCSS", "Recharts"],
     githubLink: "https://github.com/sadmanshakib/ai-content-generator",
-    liveLink: "https://ai-content-generator-demo.vercel.app",
+    liveLink: "https://admin-dashboard-phi-teal.vercel.app/home",
   },
 ];
 
 export default function ProjectsSection() {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-purple-800">
+    <section id="projects" className="w-full py-12 md:py-24 lg:py-32 bg-purple-800">
       <div className="container px-4 md:px-6 mx-auto">
         <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12 text-purple-50">
           Featured <span className="text-teal-400">Projects</span>
@@ -52,8 +51,8 @@ export default function ProjectsSection() {
                 src={project.image}
                 alt={project.title}
                 width={400}
-                height={200}
-                className="w-full h-48 object-cover"
+                height={400}
+                className="w-full h-60 "
               />
               <CardHeader>
                 <CardTitle className="text-xl font-bold text-teal-400">{project.title}</CardTitle>
@@ -78,7 +77,7 @@ export default function ProjectsSection() {
                     variant="outline"
                     className="border-teal-400 text-teal-400 hover:bg-teal-400 hover:text-purple-900"
                   >
-                    <Github className="mr-2 h-4 w-4" />
+                    <GitHubLogoIcon className="mr-2 h-4 w-4" />
                     GitHub
                   </Button>
                 </a>
