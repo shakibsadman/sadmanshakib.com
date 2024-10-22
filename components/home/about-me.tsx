@@ -41,7 +41,7 @@ export default function AboutMe() {
           </div>
         </div>
         <div>
-          <h3 className="text-xl font-semibold mb-4 text-teal-400">Tools and Technologies</h3>
+          <h3 className="text-xl font-semibold mb-4 ">Tools and Technologies</h3>
           <div className="flex flex-wrap gap-2">
             {tools.map((tool, index) => (
               <Badge key={index} variant="outline" className="">
