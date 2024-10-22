@@ -31,7 +31,7 @@ export default function AboutMe() {
     <section id="about" className="w-full   ">
       <div className="space-y-8">
         <div>
-          <h3 className="text-xl font-semibold mb-4 text-teal-400">Skills </h3>
+          <h3 className="text-xl font-semibold mb-4 ">Skills </h3>
           <div className="flex flex-wrap gap-2">
             {skills.map((skill, index) => (
               <Badge key={index} className="">
