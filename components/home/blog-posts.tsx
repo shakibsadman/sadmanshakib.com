@@ -36,12 +36,12 @@ const blogPosts = [
 
 export default function BlogSection() {
   return (
-    <section id="blog" className="w-full py-12 md:py-24 lg:py-32 bg-purple-800">
+    <section id="blog" className="">
       <div className="container px-4 md:px-6 mx-auto">
-        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12 text-purple-50">
+        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12 ">
           Latest from the <span className="text-teal-400">Blog</span>
         </h2>
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
           {blogPosts.map((post) => (
             <Card key={post.id} className="bg-purple-900 border-purple-700 text-purple-50">
               <CardHeader>

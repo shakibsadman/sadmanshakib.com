@@ -41,17 +41,17 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-purple-900">
+    <section className="">
       <div className="container px-4 md:px-6 mx-auto">
-        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12 text-purple-50">
+        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12 ">
           Frequently Asked <span className="text-teal-400">Questions</span>
         </h2>
         <div className="max-w-3xl mx-auto space-y-4">
           {faqs.map((faq, index) => (
-            <Card key={index} className="bg-purple-800 border-purple-700">
+            <Card key={index} className="">
               <CardContent className="p-6">
                 <Button
-                  className="w-full flex justify-between items-center text-left bg-transparent hover:bg-purple-700 text-purple-50"
+                  className="w-full flex justify-between items-center text-left  "
                   onClick={() => toggleFAQ(index)}
                 >
                   <span className="font-semibold text-wrap">{faq.question}</span>

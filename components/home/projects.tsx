@@ -20,7 +20,7 @@ const projects = [
   {
     id: 2,
     title: "Admin Dashboard",
-    description: "A responsive admin dashboard built with Next.js, Shadcn UI, and Supabase.",
+    description: "A responsive admin dashboard built with Next.js, Shadcn UI, and Tailwind CSS.",
     image: "/images/admin-dashboard.png",
     tags: ["Next.js", "Shadcn UI", "TailwindCSS", "React", "Zustand"],
     githubLink: "https://github.com/shadmanshakib/admin-dashboard",
@@ -39,12 +39,12 @@ const projects = [
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="w-full py-12 md:py-24 lg:py-32 bg-purple-800">
+    <section className="my-10" id="projects">
       <div className="container px-4 md:px-6 mx-auto">
-        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12 text-purple-50">
+        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12">
           Featured <span className="text-teal-400">Projects</span>
         </h2>
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
           {projects.map((project) => (
             <Card key={project.id} className="bg-purple-900 border-purple-700 overflow-hidden">
               <Image
