@@ -28,7 +28,7 @@ const page = () => {
           <p className=" font-poppins text-xl w-full text-primary max-sm:text-lg">
             I am a Full Stack Web Developer from Dhaka, Bangladesh. I love crafting cool web
             projects and also open-source contribuitions. My biggest achievement lies in my mastery
-            of JavaScript and CSS, ensuring pixel-perfect designs that captivate users. With a keen
+            of Typescript and CSS, ensuring pixel-perfect designs that captivate users. With a keen
             eye for detail and a commitment to delivery speed, I excel at creating seamless and
             responsive interfaces that leave a lasting impression.
           </p>
