@@ -5,8 +5,15 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import FramerWrapper from "@/components/animations/framer-wrapper";
 import { ArrowUpRight } from "lucide-react";
 
+interface IValue {
+  title: string;
+  description: string;
+  tags: string[];
+  link: string;
+}
+
 interface projectcardprops {
-  value: any;
+  value: IValue;
   num: number;
 }
 const ProjectCards: React.FC<projectcardprops> = ({ value, num }) => {
