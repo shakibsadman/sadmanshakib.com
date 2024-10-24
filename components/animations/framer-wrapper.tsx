@@ -19,6 +19,7 @@ function FramerWrapper({
   scale = 0,
   className,
 }: FramerMotionProps) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [animateConfig, setAnimateConfig] = useState({
     opacity: 1,
     y: 0,
