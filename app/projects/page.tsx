@@ -8,76 +8,29 @@ const projectsPage = () => {
   // PROJECTS DATA
   const Projects = [
     {
-      title: "Devzone - A community chat app for devs",
-      description: `DevZone is the ultimate chat platform for developers
-to connect, collaborate, and code together. Join the conversation and level up your coding journey.`,
-      tags: ["Zustand", "Supabase", "Shadcn Ui", "Nextjs"],
-      link: "https://devzone-ti.vercel.app/",
+      title: "YNAB-Clone",
+      description: `A clone of You Need A Budget (YNAB) built with Next.js, React, Node.js, PostgreSQL, and NextAuth.`,
+      tags: ["Zustand", "Postgres", "ShadcnUi", "Nextjs", "Next-auth"],
+      link: "https://github.com/ShadmanShakib/ynab-clone",
     },
 
     {
-      title: "itZmyLink- One Page many Links",
-      description:
-        "itZmyLink is a simple platform where user can create a personalized page to showcase all your social media profiles in one place. ",
-      tags: ["Nextjs", "Typescript", "Shadcn Ui"],
-      link: "https://github.com/taqui-786/itZmyLink",
+      title: "Shakib Admin",
+      description: "Admin Dashboard using React 18, Next JS 14, Tailwind CSS",
+      tags: ["Nextjs", "Typescript", "Tailwind CSS"],
+      link: "https://github.com/ShadmanShakib/shakib-admin",
     },
     {
-      title: "GitEstimate- Github estimate worth generator",
-      description:
-        "GitEstimate is a simple fun tool where user can generate their github estimate worth card just by entering their github username. ",
-      tags: ["Nextjs", "Typescript", "Shadcn Ui"],
-      link: "https://github.com/taqui-786/GitEstimate",
+      title: "Social X",
+      description: "Social Media Post schedular application",
+      tags: ["Nextjs", "Typescript", "Tailwind", "Next-Auth", "Postgres"],
+      link: "https://youtu.be/inCUXYCWAKI",
     },
     {
-      title: "Mixcn-ui- Reusable components for Nextjs",
-      description:
-        "This is Nextjs app with a Collection of Nextjs Components - (Currently under Devlelopment) ",
-      tags: ["Nextjs", "Shadcnui", "Npx", "Library"],
-      link: "https://mixcn-ui.vercel.app",
-    },
-    {
-      title: "Rupeespot- All deals Product in one place",
-      description:
-        "This is a free tool to check price history charts for millions of products for popular Indian stores such as Amazon and Flipkart. ",
-      tags: ["Nextjs", "Freelancing", "MySQL"],
-      link: "https://rupeespot.com/",
-    },
-
-    {
-      title: "KryptoKapital- Investing in Cryptocurreny",
-      description:
-        "This is a platform for learning about cryptocurrency with many tools and festures. It is very big project. ",
-      tags: ["Nextjs", "Freelancing", "Supabase"],
-      link: "https://pro.kryptokapital.info/",
-    },
-    {
-      title: "FriendZ - A social media Platform",
-      description:
-        "FriendZ is a social media app made with modern tech stacks such as redis, Authjs etc. A user can Create, delete, like, comment Post. ",
-      tags: ["Redis", "Authjs", "Typescript", "Nextjs"],
-      link: "https://github.com/taqui-786/project-friendz",
-    },
-    {
-      title: "ChatApp- Simple instagram clone",
-      description:
-        "ChatApp is similar to instagram, you can create, edit, delete, like,comment, post and  Follow, unfollow users",
-      tags: ["Reactjs", "Javascript"],
-      link: "https://github.com/taqui-786/chatapp-api",
-    },
-    {
-      title: "Devletter - A Newsletter for devs",
-      description:
-        "Devletter ia a newsletter subscribing single page app made with Nextjs and Tailwindcss.",
-      tags: ["Nextjs", "Tailwindcss"],
-      link: "https://github.com/taqui-786/Devletter",
-    },
-    {
-      title: "CrouMaker - A Crousal Maker App",
-      description:
-        "Crousal Maker is a tool with in-built crousals templates edit and download it in any format.",
-      tags: ["Nextjs", "jsPDF", "html2canvas", "Shadcn Ui"],
-      link: "https://github.com/taqui-786/crousal-maker",
+      title: "Juggle Rewards",
+      description: "Shopping application Admin dashboard. Worked as a Full stack developer. ",
+      tags: ["Reactjs", "Express.js", "MongoDB", "Node.js"],
+      link: "https://youtu.be/EZ85JL2ibqU",
     },
   ];
 
