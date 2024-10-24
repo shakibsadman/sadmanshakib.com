@@ -1,20 +1,18 @@
-import Hero from "@/components/home/hero";
-
-import Footer from "@/components/common/footer";
-import BlogPosts from "@/components/home/blog-posts";
-import AboutMe from "@/components/home/about-me";
-import Projects from "@/components/home/projects";
-import FAQSection from "@/components/home/faq";
+import GithubBtn from "@/components/home/github-btn";
+import HeroTexts from "@/components/home/hero-text";
+import FramerWrapper from "@/components/animations/framer-wrapper";
+import SocialLinks from "@/components/home/social-links";
 
 export default function Home() {
   return (
-    <main className="max-w-screen-md mx-auto">
-      <Hero />
-      <AboutMe />
-      <Projects />
-      <BlogPosts />
-      <FAQSection />
-      <Footer />
-    </main>
+    <div className="">
+      <FramerWrapper className=" h-full w-auto flex flex-col justify-start gap-4" y={0} x={-100}>
+        <HeroTexts />
+        <div className="h-fit w-full p-4 flex gap-3">
+          <SocialLinks />
+        </div>
+      </FramerWrapper>
+      <GithubBtn />
+    </div>
   );
 }
