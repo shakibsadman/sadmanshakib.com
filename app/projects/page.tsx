@@ -32,6 +32,13 @@ const projectsPage = () => {
       tags: ["Reactjs", "Express.js", "MongoDB", "Node.js"],
       link: "https://youtu.be/EZ85JL2ibqU",
     },
+    {
+      title: "Full Stack Dashboard",
+      description:
+        "Admin dashboard Build features includes charts, authentication, api routes, messaging etc",
+      tags: ["Next.js", "Shadcn UI", "MongoDB", "Prisma"],
+      link: "https://github.com/ShadmanShakib/shakib-admin-v3",
+    },
   ];
 
   return (
