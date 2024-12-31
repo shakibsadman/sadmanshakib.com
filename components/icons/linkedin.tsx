@@ -3,7 +3,7 @@ import React from "react";
 export default function Linkedin({ className }: { className?: string }) {
   return (
     <svg
-      enable-background="new 0 0 56.693 56.693"
+      enableBackground="new 0 0 56.693 56.693"
       height="56.693px"
       stroke="currentColor"
       fill="currentColor"
