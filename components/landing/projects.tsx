@@ -1,10 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { getProjects } from "@projects/actions";
 
 import ProjectCard from "./project-card";
-
-import { Project } from "@projects/types";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -28,7 +27,11 @@ const itemVariants = {
   },
 };
 
-export default function ProjectsSection({ projects }: { projects: Project[] }) {
+type ProjectsSectionProps = {
+  projects: Awaited<ReturnType<typeof getProjects>>;
+};
+
+export default function ProjectsSection({ projects }: ProjectsSectionProps) {
   return (
     <motion.section
       initial="hidden"
@@ -65,12 +68,12 @@ export default function ProjectsSection({ projects }: { projects: Project[] }) {
           variants={containerVariants}
           className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto"
         >
-          {projects.map((project) => (
+          {projects.docs.map((project) => (
             <ProjectCard
               key={project.id}
               name={project.title}
-              image={project.preview_image}
-              website={project.website}
+              image={project.preview_image as string}
+              website={project.website as string}
               description={project.preview_text}
             />
           ))}

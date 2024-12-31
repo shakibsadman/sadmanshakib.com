@@ -1,6 +1,9 @@
-import axios from "axios";
+"use server";
+import { payload } from "@/lib/payload";
 
 export const getProjects = async () => {
-  const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/projects?limit=3`);
-  return response.data;
+  const projects = await payload.find({
+    collection: "projects",
+  });
+  return projects;
 };
