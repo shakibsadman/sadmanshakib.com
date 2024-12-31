@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Calendar, Share2 } from "lucide-react";
+import { Calendar } from "lucide-react";
 import AvailabilityBanner from "./availability-banner";
 
 const textVariants = {
@@ -109,13 +109,6 @@ export default function HeroSection() {
               Schedule a Call
             </Button>
           </a>
-          <Button
-            variant="outline"
-            className="gap-2 border-blue-500 text-lg text-blue-400 hover:bg-blue-500 hover:text-white h-14 w-72"
-          >
-            <Share2 className="w-6 h-6" />
-            Share Your Vision
-          </Button>
         </motion.div>
 
         <motion.div

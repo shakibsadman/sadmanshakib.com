@@ -7,12 +7,12 @@ import { Check } from "lucide-react";
 const plans = [
   {
     name: "MVP Development Package",
-    price: "$2497",
+    price: "$1998",
     description: "One time",
     popular: true,
     features: [
       "Complete MVP development in 2-3 weeks",
-      "Web application/ Mobile App",
+      "Web application",
       "Modern, scalable tech stack",
       "Seamless integrations (payments, auth, etc.)",
       "30 days of free maintenance",
@@ -24,7 +24,7 @@ const plans = [
   },
   {
     name: "Growth Retainer Package",
-    price: "$2997",
+    price: "$2998",
     period: "/month",
     description: "Monthly Retainer",
     features: [

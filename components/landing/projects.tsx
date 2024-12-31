@@ -1,11 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-// import { Badge } from "@/components/ui/badge";
+import { getProjects } from "@projects/actions";
 
 import ProjectCard from "./project-card";
-import { projectsData } from "@/data/projects";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -29,7 +27,11 @@ const itemVariants = {
   },
 };
 
-export default function ProjectsSection() {
+type ProjectsSectionProps = {
+  projects: Awaited<ReturnType<typeof getProjects>>;
+};
+
+export default function ProjectsSection({ projects }: ProjectsSectionProps) {
   return (
     <motion.section
       initial="hidden"
@@ -66,63 +68,17 @@ export default function ProjectsSection() {
           variants={containerVariants}
           className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto"
         >
-          {projectsData.map((project) => (
+          {projects.docs.map((project) => (
             <ProjectCard
               key={project.id}
-              name={project.name}
-              image={project.images}
-              website={project.website}
-              description={project.description}
+              name={project.title}
+              image={project.preview_image as string}
+              website={project.website as string}
+              description={project.preview_text}
             />
           ))}
-          {/* {projects.map((project) => (
-            <motion.div
-              key={project.title}
-              variants={itemVariants}
-              whileHover={{ scale: 1.02 }}
-              className="group relative rounded-xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-sm"
-            >
-              <motion.div
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                transition={{ delay: 0.5, duration: 0.8 }}
-                viewport={{ once: true }}
-                className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent"
-              />
-              <div className="aspect-video relative overflow-hidden">
-                <motion.img
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ duration: 0.6 }}
-                  src={project.image}
-                  alt={project.title}
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <motion.h3
-                  variants={itemVariants}
-                  className="text-2xl font-semibold mb-2 text-white"
-                >
-                  {project.title}
-                </motion.h3>
-                <motion.p variants={itemVariants} className="text-gray-400 mb-4">
-                  {project.description}
-                </motion.p>
-                <motion.div variants={containerVariants} className="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <motion.div key={tag} variants={itemVariants} whileHover={{ scale: 1.05 }}>
-                      <Badge className="bg-blue-500/10 text-blue-400 hover:bg-blue-500/20 border-blue-500/20">
-                        {tag}
-                      </Badge>
-                    </motion.div>
-                  ))}
-                </motion.div>
-              </div>
-            </motion.div>
-          ))} */}
         </motion.div>
       </div>
-    
     </motion.section>
   );
 }
