@@ -1,16 +1,16 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
 export default function AvailabilityBanner() {
   return (
-    <div className="min-h-screen bg-black flex items-center justify-center p-4">
+    <div className="min-h-40 bg-black flex items-center justify-center ">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
           duration: 0.8,
-          ease: "easeOut"
+          ease: "easeOut",
         }}
         className="relative overflow-hidden rounded-full px-6 py-3"
         style={{
@@ -26,10 +26,10 @@ export default function AvailabilityBanner() {
         >
           <span className="text-[#8B9EFF] font-medium">Limited Availability:</span>
           <span className="bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent">
-            1 Spots for December
+            1 Spots for January
           </span>
         </motion.div>
-        
+
         {/* Animated glow effect */}
         <motion.div
           initial={{ x: "-100%" }}
@@ -45,6 +45,5 @@ export default function AvailabilityBanner() {
         />
       </motion.div>
     </div>
-  )
+  );
 }
-

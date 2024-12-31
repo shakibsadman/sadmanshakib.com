@@ -2,24 +2,10 @@
 
 import { motion } from "framer-motion";
 
-import { Badge } from "@/components/ui/badge";
+// import { Badge } from "@/components/ui/badge";
 
-const projects = [
-  {
-    title: "ThinkAI",
-    description:
-      "Think.ai is a smart study assistant that helps users engage deeply with study materials like PDFs and videos.",
-    image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=2070",
-    tags: ["AI", "EdTech", "Study Companion", "PDF/Video Analysis"],
-  },
-  {
-    title: "TripChats",
-    description:
-      "TripChats is a social travel app designed for solo travelers to connect with locals and other travelers in popular destinations worldwide.",
-    image: "https://images.unsplash.com/photo-1512075135822-67cdd9dd7314?q=80&w=2070",
-    tags: ["Mobile App", "Social Networking", "Travel", "Solo Travelers"],
-  },
-];
+import ProjectCard from "./project-card";
+import { projectsData } from "@/data/projects";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -80,7 +66,16 @@ export default function ProjectsSection() {
           variants={containerVariants}
           className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto"
         >
-          {projects.map((project) => (
+          {projectsData.map((project) => (
+            <ProjectCard
+              key={project.id}
+              name={project.name}
+              image={project.images}
+              website={project.website}
+              description={project.description}
+            />
+          ))}
+          {/* {projects.map((project) => (
             <motion.div
               key={project.title}
               variants={itemVariants}
@@ -124,9 +119,10 @@ export default function ProjectsSection() {
                 </motion.div>
               </div>
             </motion.div>
-          ))}
+          ))} */}
         </motion.div>
       </div>
+    
     </motion.section>
   );
 }

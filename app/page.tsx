@@ -1,4 +1,4 @@
-import { HeroSection, PricingSection, ProjectsSection } from "@/components/landing";
+import { HeroSection, PricingSection, ProjectsSection, Footer } from "@/components/landing";
 
 export default function Home() {
   return (
@@ -6,6 +6,7 @@ export default function Home() {
       <HeroSection />
       <ProjectsSection />
       <PricingSection />
+      <Footer />
     </div>
   );
 }

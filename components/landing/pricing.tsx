@@ -20,7 +20,7 @@ const plans = [
       "Regular updates and transparent process",
     ],
     cta: "Get Started Now",
-    note: "4 Spots left for December",
+    note: "1 Spots left for January",
   },
   {
     name: "Growth Retainer Package",
@@ -109,7 +109,7 @@ export default function PricingSection() {
             <motion.div
               key={plan.name}
               variants={itemVariants}
-              whileHover={{ scale: 1.02 }}
+              whileHover={{ scale: 1 }}
               className={`relative rounded-xl p-8 border border-white/10 backdrop-blur-sm ${
                 plan.popular ? "bg-white/5" : "bg-white/5"
               }`}
@@ -146,15 +146,18 @@ export default function PricingSection() {
 
               <div className="space-y-3 mb-6">
                 {plan.features.map((feature) => (
-                  <div key={feature} className="flex items-center gap-2">
+                  <div key={feature} className="flex items-center text-lg gap-2">
                     <Check className="h-4 w-4 text-blue-400" />
-                    <span className="text-sm text-gray-300">{feature}</span>
+                    <span className="text-lg text-gray-300">{feature}</span>
                   </div>
                 ))}
               </div>
 
               <div className="space-y-4">
                 <Button
+                  onClick={() => {
+                    window.location.href = "https://cal.com/sadman-shakib/30min";
+                  }}
                   className={`w-full ${
                     plan.popular
                       ? "bg-blue-500 hover:bg-blue-600 text-white"

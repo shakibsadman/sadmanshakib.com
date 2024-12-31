@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import {  Calendar, Share2 } from "lucide-react";
+import { Calendar, Share2 } from "lucide-react";
 import AvailabilityBanner from "./availability-banner";
 
 const textVariants = {
@@ -42,35 +42,33 @@ const wordVariants = {
 
 export default function HeroSection() {
   return (
+    <div className="relative w-full bg-black">
+      <motion.div
+        variants={{
+          initial: { opacity: 0, y: -60 },
+          animate: {
+            opacity: 1,
+            y: 0,
+            transition: {
+              duration: 0.8,
+              ease: [0.33, 1, 0.68, 1],
+              delay: 0.2,
+            },
+          },
+        }}
+        className="relative z-50"
+      >
+        <AvailabilityBanner />
+      </motion.div>
 
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:64px_64px]" />
       <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black" />
       <motion.div
         initial="initial"
         animate="animate"
         variants={textVariants}
-        className="relative z-10 max-w-5xl mx-auto px-4 pt-20 pb-16 text-center"
+        className="relative z-10 max-w-5xl mx-auto px-4 pb-16 text-center"
       >
-        <motion.div
-          variants={{
-            initial: { opacity: 0, y: -60 },
-            animate: {
-              opacity: 1,
-              y: 0,
-              transition: {
-                duration: 0.8,
-                ease: [0.33, 1, 0.68, 1],
-                delay: 0.2,
-              },
-            },
-          }}
-          className="flex justify-center absolute top-0"
-        >
-        
-          <AvailabilityBanner />
-        </motion.div>
-
         <motion.h1
           variants={wordVariants}
           className="text-4xl sm:text-8xl font-bold tracking-tight mb-6 text-white"
@@ -92,7 +90,7 @@ export default function HeroSection() {
             }}
             className="bg-gradient-to-r from-blue-400 to-violet-400 text-transparent bg-clip-text"
           >
-  Powerful MVP
+            Powerful MVP
           </motion.span>
         </motion.h1>
 
@@ -106,17 +104,16 @@ export default function HeroSection() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <a target="_blank" rel="noopener noreferrer" href="https://cal.com/sadman-shakib/30min">
-            <Button  className="gap-2 bg-blue-500 hover:bg-blue-600 h-14 w-72">
-              <Calendar className="w-4 h-4" />
+            <Button className="gap-2 text-lg bg-blue-500 hover:bg-blue-600 h-14 w-72">
+              <Calendar className="w-6 h-6" />
               Schedule a Call
             </Button>
           </a>
           <Button
-            
             variant="outline"
-            className="gap-2 border-blue-500 text-blue-400 hover:bg-blue-500/10 h-14 w-72"
+            className="gap-2 border-blue-500 text-lg text-blue-400 hover:bg-blue-500 hover:text-white h-14 w-72"
           >
-            <Share2 className="w-4 h-4" />
+            <Share2 className="w-6 h-6" />
             Share Your Vision
           </Button>
         </motion.div>
@@ -154,6 +151,5 @@ export default function HeroSection() {
         </motion.div>
       </motion.div>
     </div>
-    
   );
 }
