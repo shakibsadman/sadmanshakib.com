@@ -4,7 +4,6 @@ import React, { useRef } from "react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import "./style.module.css";
 
 export const StickyScroll = ({
   content,
@@ -44,7 +43,7 @@ export const StickyScroll = ({
       animate={{
         backgroundColor: backgroundColors[activeCard % backgroundColors.length],
       }}
-      className="h-screen overflow-y-auto w-full flex justify-center relative   scrollbar-none "
+      className={cn("h-screen overflow-y-auto w-full flex justify-center relative scrollbar-none")}
       ref={ref}
     >
       <div
