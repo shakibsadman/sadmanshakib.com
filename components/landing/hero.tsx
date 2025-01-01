@@ -88,7 +88,7 @@ export default function HeroSection() {
                 },
               },
             }}
-            className="bg-gradient-to-r from-blue-400 to-violet-400 text-transparent bg-clip-text"
+            className="bg-gradient-to-r from-primary to-violet-400 text-transparent bg-clip-text"
           >
             Powerful MVP
           </motion.span>
@@ -104,7 +104,7 @@ export default function HeroSection() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <a target="_blank" rel="noopener noreferrer" href="https://cal.com/sadman-shakib/30min">
-            <Button className="gap-2 text-lg bg-blue-500 hover:bg-blue-600 h-14 w-72">
+            <Button className="gap-2 text-lg bg-primary hover:bg-primary/90 h-14 w-72 rounded-full text-black">
               <Calendar className="w-6 h-6" />
               Schedule a Call
             </Button>

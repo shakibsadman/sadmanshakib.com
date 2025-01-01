@@ -1,4 +1,4 @@
-import { HeroSection, PricingSection, ProjectsSection, Footer } from "@/components/landing";
+import { HeroSection, PricingSection, ProjectsSection, Footer, Offer } from "@/components/landing";
 import { getProjects } from "@projects/actions";
 import { Suspense } from "react";
 
@@ -7,6 +7,9 @@ export default async function Home() {
   return (
     <div className="">
       <HeroSection />
+      <div className=" relative">
+        <Offer />
+      </div>
       <Suspense fallback={<div>Loading...</div>}>
         <ProjectsSection projects={data} />
       </Suspense>

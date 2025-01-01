@@ -82,3 +82,8 @@ body {
     transform: translateY(-83.33%);
   }
 }
+
+/* add variables */
+:root {
+  --primary: #00e599;
+}
