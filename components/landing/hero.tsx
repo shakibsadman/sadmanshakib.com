@@ -73,7 +73,7 @@ export default function HeroSection() {
           variants={wordVariants}
           className="text-4xl sm:text-8xl font-bold tracking-tight mb-6 text-white"
         >
-          Transform Your Vision Into a &nbsp;
+          SaaS MVP for the <br />
           <motion.span
             variants={{
               initial: { opacity: 0, y: 50, scale: 0.9 },
@@ -90,13 +90,12 @@ export default function HeroSection() {
             }}
             className="bg-gradient-to-r from-primary to-violet-400 text-transparent bg-clip-text"
           >
-            Powerful MVP
+            21st Century
           </motion.span>
         </motion.h1>
 
         <motion.p variants={wordVariants} className="max-w-2xl mx-auto text-xl text-gray-400 mb-12">
-          We build production-ready MVPs in weeks, not months. Get to market faster with our expert
-          development team and proven process.
+          The modern way to build your SaaS MVP and get it to market within weeks.
         </motion.p>
 
         <motion.div

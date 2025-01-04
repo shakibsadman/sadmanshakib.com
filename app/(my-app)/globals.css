@@ -94,4 +94,6 @@ body {
 :root {
   --primary: #00e599;
   --background: hsl(233 8% 4% / 1);
+  --background-secondary: hsl(240deg 7.32% 8.04%);
+  --text-secondary: hsl(233 8% 68%/ 1);
 }
