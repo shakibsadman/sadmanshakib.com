@@ -6,6 +6,7 @@ import {
   Offer,
   AboutMe,
   FAQSection,
+  FeatureCards,
 } from "@/components/landing";
 import { faqData } from "@/data/faq";
 import { getProjects } from "@projects/actions";
@@ -14,16 +15,17 @@ import { Suspense } from "react";
 export default async function Home() {
   const data = await getProjects();
   return (
-    <div className="">
+    <div className="bg-background">
       <HeroSection />
+      <FeatureCards />
       <div className=" relative">
         <Offer />
       </div>
       <Suspense fallback={<div>Loading...</div>}>
         <ProjectsSection projects={data} />
       </Suspense>
-      <PricingSection />
       <FAQSection faq={faqData} />
+      <PricingSection />
       <AboutMe />
       <Footer />
     </div>

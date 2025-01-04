@@ -124,23 +124,7 @@ export default function HeroSection() {
             },
           }}
           className="mt-16 flex justify-center"
-        >
-          <div className="relative rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm p-8">
-            <div className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-              {[
-                { title: "2 Week MVP", desc: "From concept to launch" },
-                { title: "Full Stack", desc: "End-to-end development" },
-                { title: "Scalable", desc: "Built for growth" },
-              ].map((item, i) => (
-                <div key={i} className="text-center">
-                  <h3 className="font-semibold text-lg text-white">{item.title}</h3>
-                  <p className="text-sm text-gray-400">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </motion.div>
+        ></motion.div>
       </motion.div>
     </div>
   );
