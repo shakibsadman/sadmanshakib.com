@@ -1,4 +1,11 @@
-import { HeroSection, PricingSection, ProjectsSection, Footer, Offer } from "@/components/landing";
+import {
+  HeroSection,
+  PricingSection,
+  ProjectsSection,
+  Footer,
+  Offer,
+  AboutMe,
+} from "@/components/landing";
 import { getProjects } from "@projects/actions";
 import { Suspense } from "react";
 
@@ -14,6 +21,7 @@ export default async function Home() {
         <ProjectsSection projects={data} />
       </Suspense>
       <PricingSection />
+      <AboutMe />
       <Footer />
     </div>
   );
