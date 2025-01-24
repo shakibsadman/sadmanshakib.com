@@ -21,7 +21,8 @@
       "@/*": ["./*"],
       "@payload-config": ["./app/payload.config.ts"],
       "@posts/*": ["./app/(my-app)/posts/*"],
-      "@projects/*": ["./app/(my-app)/projects/*"]
+      "@projects/*": ["./app/(my-app)/projects/*"],
+      "@/blocks/*": ["./app/components/blocks/*"],
     },
     "target": "ES2017"
   },
