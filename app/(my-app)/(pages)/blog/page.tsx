@@ -1,25 +1,20 @@
+import '../../prism.css'
+import 'katex/dist/katex.css'
+import { MDXLayoutRenderer } from 'pliny/mdx-components.js'
 import React from 'react'
-import RichText from "@/components/ui/rich-text";
-import {getAllPosts} from "@/modules/blog";
+import { allBlogs } from 'contentlayer/generated'
+export default function page() {
 
-export default async function BlogPage() {
-  const posts = await getAllPosts()
   return (
     <div>
+      {allBlogs.map((post) => (
+        <MDXLayoutRenderer
+          key={post._id}
+          code={post.body.code}
 
-      {
-        posts.map((post) => (
-          <div key={post.id}>
-            <h1>{post.title}</h1>
-            <RichText data={post.content} />
-          </div>
-        ))
-      }
-      <details>
-        <pre>
-          {JSON.stringify(posts, null, 2)}
-        </pre>
-      </details>
+        />
+      ))}
+
     </div>
   )
 }
