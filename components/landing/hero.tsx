@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "lucide-react";
 import AvailabilityBanner from "./availability-banner";
-
+import HeroFooter from "./hero-footer";
 const textVariants = {
   initial: {
     opacity: 0,
@@ -41,6 +41,7 @@ const wordVariants = {
 };
 
 export default function HeroSection() {
+
   return (
     <div className="relative w-full bg-black">
       <motion.div
@@ -126,6 +127,7 @@ export default function HeroSection() {
           className="mt-16 flex justify-center"
         ></motion.div>
       </motion.div>
+      <HeroFooter />
     </div>
   );
 }
