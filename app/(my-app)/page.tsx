@@ -5,10 +5,10 @@ import {
   Footer,
 
   AboutMe,
-  FAQSection,
+  // FAQSection,
   Features,
 } from "@/components/landing";
-import { faqData } from "@/data/faq";
+// import { faqData } from "@/data/faq";
 import { getProjects } from "@projects/actions";
 import { Suspense } from "react";
 
@@ -23,7 +23,7 @@ export default async function Home() {
       <Suspense fallback={<div>Loading...</div>}>
         <ProjectsSection projects={data} />
       </Suspense>
-      <FAQSection faq={faqData} />
+      {/* <FAQSection faq={faqData} /> */}
       <PricingSection />
       <AboutMe />
       <Footer />
