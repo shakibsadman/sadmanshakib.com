@@ -5,7 +5,7 @@ import { ShoppingCart, CreditCard, Wallet } from "lucide-react"
 export default function PaymentsSection() {
     return (
         <div className=" bg-[#FDF8F7] mx-auto px-4 py-20">
-            <div className="space-y-4 mb-8 max-w-6xl mx-auto">
+            <div className="space-y-4 mb-8 max-w-4xl mx-auto">
                 <h1 className="text-4xl font-bold text-gray-900">Payments</h1>
                 <p className="text-xl text-gray-600">Monetize your mobile app with subscriptions or in-app purchases.</p>
                 <p className="text-gray-600">
@@ -16,7 +16,7 @@ export default function PaymentsSection() {
 
 
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto ">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto ">
                 <Card className="bg-white">
                     <CardContent className="p-6 space-y-4">
                         <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">

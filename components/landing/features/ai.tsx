@@ -5,7 +5,7 @@ import { Sparkles } from "lucide-react"
 export default function AIFeatures() {
     return (
         <div className="bg-[#FDF8F7] px-4 py-16 md:px-6 lg:px-8">
-            <div className="mx-auto max-w-6xl">
+            <div className="mx-auto max-w-4xl">
                 <div className="mb-12">
                     <div className="mb-2">
                         <Sparkles className="h-8 w-8 text-emerald-500" />
