@@ -1,8 +1,9 @@
-import { Lock, CreditCard, Paintbrush, Server } from "lucide-react";
+import { Lock, CreditCard, Paintbrush, Server, Sparkles } from "lucide-react";
 import AuthFeatures from "./authentication";
 import PaymentsSection from "./payment";
 import StyleSection from "./styles";
 import FeatureSection from "./backend";
+import AIFeatures from "./ai";
 export const featureTabs = [
     {
         title: "Authentication",
@@ -24,5 +25,11 @@ export const featureTabs = [
         title: "Backend",
         icon: Server,
         content: FeatureSection
-    }
+    },
+    {
+        title: "AI",
+        icon: Sparkles,
+        content: AIFeatures
+    },
+
 ]

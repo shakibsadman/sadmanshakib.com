@@ -18,9 +18,9 @@ export default function FeatureSection() {
                         </svg>
                     </div>
                     <h2 className="mb-3 text-4xl font-bold tracking-tight">Full-Stack Ready</h2>
-                    <p className="mb-4 text-xl text-muted-foreground">Build a full-stack mobile app.</p>
+                    <p className="mb-4 text-xl text-muted-foreground">Build a full-stack SaaS app.</p>
                     <p className="text-muted-foreground">
-                        NativeExpress comes with a backend stack powered by Supabase.
+                        Build MVP using powerful Supabase Backend.
                         <br />
                         Using PostgreSQL database, authentication, and serverless functions - all preconfigured.
                     </p>

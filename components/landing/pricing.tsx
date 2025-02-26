@@ -3,11 +3,15 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
+import { cn } from "@/lib/utils";
+
+const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 const plans = [
   {
     name: "MVP Development Package",
     price: "$1998",
+    discountPrice: "$1498",
     description: "One time",
     popular: true,
     features: [
@@ -20,7 +24,7 @@ const plans = [
       "Regular updates and transparent process",
     ],
     cta: "Get Started Now",
-    note: "1 Spots left for January",
+    note: `1 Spots left for ${months[new Date().getMonth()]}`,
   },
   {
     name: "Growth Retainer Package",
@@ -110,9 +114,8 @@ export default function PricingSection() {
               key={plan.name}
               variants={itemVariants}
               whileHover={{ scale: 1 }}
-              className={`relative rounded-xl p-8 border border-white/10 backdrop-blur-sm ${
-                plan.popular ? "bg-white/5" : "bg-white/5"
-              }`}
+              className={`relative rounded-xl p-8 border border-white/10 backdrop-blur-sm ${plan.popular ? "bg-white/5" : "bg-white/5"
+                }`}
             >
               <motion.div
                 initial={{ scaleX: 0 }}
@@ -138,7 +141,11 @@ export default function PricingSection() {
               <div className="mb-6">
                 <h3 className="text-xl font-semibold mb-2 text-white">{plan.name}</h3>
                 <div className="flex items-baseline gap-1">
-                  <span className="text-4xl font-bold text-white">{plan.price}</span>
+                  {plan.discountPrice && (
+                    <span className="text-4xl font-bold text-primary">{plan.discountPrice}</span>
+                  )}
+                  <span className={cn("text-4xl font-bold text-primary ", plan.discountPrice && "text-gray-400 line-through text-2xl")}>{plan.price}</span>
+
                   {plan.period && <span className="text-gray-400">{plan.period}</span>}
                 </div>
                 <p className="text-sm text-gray-400 mt-1">{plan.description}</p>
@@ -158,11 +165,10 @@ export default function PricingSection() {
                   onClick={() => {
                     window.location.href = "https://cal.com/sadman-shakib/30min";
                   }}
-                  className={`w-full ${
-                    plan.popular
-                      ? "bg-blue-500 hover:bg-blue-600 text-white"
-                      : "bg-white/10 hover:bg-white/20 text-white"
-                  }`}
+                  className={`w-full ${plan.popular
+                    ? "bg-blue-500 hover:bg-blue-600 text-white"
+                    : "bg-white/10 hover:bg-white/20 text-white"
+                    }`}
                 >
                   {plan.cta}
                 </Button>

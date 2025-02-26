@@ -7,9 +7,9 @@ export default function AuthFeatures() {
                 <h1 className="text-3xl font-semibold text-gray-900 mb-3">Authentication</h1>
                 <p className="text-gray-600 text-lg mb-2">Securely authenticate your users using social login or password.</p>
                 <p className="text-gray-500 text-sm mb-8">
-                    NativeExpress integrates Supabase Auth to provide a complete authentication system out of the box. Sign up,
+                    Supabase Auth to provide a complete authentication system out of the box. Sign up,
                     sign in, password reset, and social authentication with Apple and Google - all preconfigured and ready for
-                    your app.
+                    your SaaS.
                 </p>
 
                 <div className="mb-8">
@@ -31,7 +31,7 @@ export default function AuthFeatures() {
                         <div className="flex items-start gap-3">
                             <KeyRound className="w-5 h-5 mt-1 text-gray-700" />
                             <div>
-                                <h3 className="font-semibold text-gray-900 mb-1">oAuth</h3>
+                                <h3 className="font-semibold text-gray-900 mb-1">OAuth</h3>
                                 <p className="text-gray-500 text-sm">Sign in with Google and Apple oAuth.</p>
                             </div>
                         </div>
