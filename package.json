@@ -22,7 +22,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "contentlayer2": "^0.5.4",
-    "framer-motion": "^11.11.9",
+    "framer-motion": "^12.4.7",
     "github-slugger": "^2.0.0",
     "graphql": "^16.10.0",
     "hast-util-from-html-isomorphic": "^2.0.0",
