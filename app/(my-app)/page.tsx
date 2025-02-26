@@ -3,10 +3,10 @@ import {
   PricingSection,
   ProjectsSection,
   Footer,
-  Offer,
+
   AboutMe,
   FAQSection,
-  FeatureCards,
+  Features,
 } from "@/components/landing";
 import { faqData } from "@/data/faq";
 import { getProjects } from "@projects/actions";
@@ -17,10 +17,9 @@ export default async function Home() {
   return (
     <div className="bg-background">
       <HeroSection />
-      <FeatureCards />
-      <div className=" relative">
-        <Offer />
-      </div>
+
+
+      <Features />
       <Suspense fallback={<div>Loading...</div>}>
         <ProjectsSection projects={data} />
       </Suspense>

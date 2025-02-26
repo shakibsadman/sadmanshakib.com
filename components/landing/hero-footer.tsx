@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, Box, GitMerge, Layout } from "lucide-react";
+import { Box, GitMerge, Layout } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 
@@ -26,7 +26,7 @@ const defaultTaglines = [
 
 const MotionCard = motion(Card);
 
-export default function FeatureCards() {
+export default function HeroFooter() {
   const icons = [
     <Box key="box" className="w-6 h-6 text-white" />,
     <Layout key="layout" className="w-6 h-6 text-white" />,
@@ -34,8 +34,8 @@ export default function FeatureCards() {
   ];
 
   return (
-    <div className="w-full p-6">
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    <div className="w-full p-6 max-w-screen-xl mx-auto">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 `">
         {defaultTaglines.map((tagline, index) => (
           <MotionCard
             key={tagline.title}
@@ -94,28 +94,7 @@ export default function FeatureCards() {
                   </motion.li>
                 ))}
               </motion.ul>
-              <motion.div
-                className="inline-flex items-center text-sm text-white"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: index * 0.2 + 0.7, ease: "easeOut" }}
-                whileHover={{ scale: 1.05 }}
-              >
-                <motion.a
-                  href="#"
-                  className="inline-flex items-center"
-                  whileHover={{ color: "#10b981" }} // Emerald-500 color
-                >
-                  Learn more
-                  <motion.div
-                    className="ml-1"
-                    whileHover={{ x: 5 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                  >
-                    <ArrowRight className="w-4 h-4" />
-                  </motion.div>
-                </motion.a>
-              </motion.div>
+
             </CardContent>
           </MotionCard>
         ))}

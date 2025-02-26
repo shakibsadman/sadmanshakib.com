@@ -1,0 +1,1 @@
+export {default as getAllPosts} from "./get-all-posts"

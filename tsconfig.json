@@ -21,10 +21,21 @@
       "@/*": ["./*"],
       "@payload-config": ["./app/payload.config.ts"],
       "@posts/*": ["./app/(my-app)/posts/*"],
-      "@projects/*": ["./app/(my-app)/projects/*"]
+      "@projects/*": ["./app/(my-app)/projects/*"],
+      "@/blocks/*": ["./app/components/blocks/*"],
+      "contentlayer/generated": ["./.contentlayer/generated"]
     },
     "target": "ES2017"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "app/**/*.tsx",
+    "**/*.json",
+    ".contentlayer/generated",
+    ".contentlayer/generated/**/*.json"
+  ],
   "exclude": ["node_modules"]
 }
