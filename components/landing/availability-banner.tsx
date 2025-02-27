@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-
+const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 export default function AvailabilityBanner() {
+  const month = new Date().getMonth();
   return (
     <div className="min-h-40 bg-black flex items-center justify-center ">
       <motion.div
@@ -26,7 +27,7 @@ export default function AvailabilityBanner() {
         >
           <span className="text-[#8B9EFF] font-medium">Limited Availability:</span>
           <span className="bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent">
-            1 Spots for January
+            {`1 Spot for ${months[month]}`}
           </span>
         </motion.div>
 

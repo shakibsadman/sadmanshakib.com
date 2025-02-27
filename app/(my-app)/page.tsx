@@ -3,7 +3,6 @@ import {
   PricingSection,
   ProjectsSection,
   Footer,
-  Offer,
   AboutMe,
   FAQSection,
   FeatureCards,
@@ -18,9 +17,6 @@ export default async function Home() {
     <div className="bg-background">
       <HeroSection />
       <FeatureCards />
-      <div className=" relative">
-        <Offer />
-      </div>
       <Suspense fallback={<div>Loading...</div>}>
         <ProjectsSection projects={data} />
       </Suspense>

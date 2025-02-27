@@ -4,6 +4,9 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "lucide-react";
 import AvailabilityBanner from "./availability-banner";
+import HeroFooter from "./hero-footer";
+
+
 
 const textVariants = {
   initial: {
@@ -124,7 +127,9 @@ export default function HeroSection() {
             },
           }}
           className="mt-16 flex justify-center"
-        ></motion.div>
+        >
+          <HeroFooter />
+        </motion.div>
       </motion.div>
     </div>
   );
