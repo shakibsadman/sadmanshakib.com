@@ -1,5 +1,6 @@
 import { Metadata } from "next/types";
 import localFont from "next/font/local";
+import { ThemeProvider } from "@/components/theme-provider";
 
 import "./globals.css";
 
@@ -27,7 +28,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} `}>
-        <main>{children}</main>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <main>{children}</main>
+        </ThemeProvider>
       </body>
     </html>
   );

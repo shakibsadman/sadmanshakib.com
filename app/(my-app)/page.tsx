@@ -1,29 +1,19 @@
-import {
-  HeroSection,
-  PricingSection,
-  ProjectsSection,
-  Footer,
-  AboutMe,
-  FAQSection,
-  FeatureCards,
-} from "@/components/landing";
+import { PricingSection, AboutMe, FAQSection, FeatureCards, HeroSection, Footer } from "@/components/landing";
 import { faqData } from "@/data/faq";
-import { getProjects } from "@projects/actions";
-import { Suspense } from "react";
-
-export default async function Home() {
-  const data = await getProjects();
+// import Navbar from "@/components/Navbar";
+export default function Home() {
   return (
-    <div className="bg-background">
-      <HeroSection />
-      <FeatureCards />
-      <Suspense fallback={<div>Loading...</div>}>
-        <ProjectsSection projects={data} />
-      </Suspense>
-      <FAQSection faq={faqData} />
-      <PricingSection />
-      <AboutMe />
-      <Footer />
+    <div className="relative">
+
+      <main>
+        <HeroSection />
+        <FeatureCards />
+        <PricingSection />
+
+        <FAQSection faq={faqData} />
+        <AboutMe />
+        <Footer />
+      </main>
     </div>
   );
 }

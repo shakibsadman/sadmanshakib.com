@@ -14,33 +14,21 @@ const cardVariants = {
   hidden: {
     opacity: 0,
     y: 100,
-    scale: 0.8,
-    rotateX: -15,
+    scale: 0.95,
     boxShadow: "0 0 0 rgba(0,0,0,0)",
   },
   visible: {
     opacity: 1,
     y: 0,
     scale: 1,
-    rotateX: 0,
-    boxShadow: "0 25px 50px rgba(0,0,0,0.3)",
+    boxShadow: "0 15px 30px rgba(0,0,0,0.25)",
     transition: {
       type: "spring",
-      stiffness: 80,
+      stiffness: 70,
       damping: 20,
-      mass: 1.5,
+      mass: 1.2,
       when: "beforeChildren",
-      staggerChildren: 0.15,
-    },
-  },
-  hover: {
-    scale: 1.05,
-    y: -10,
-    boxShadow: "0 35px 70px rgba(0,0,0,0.5)",
-    transition: {
-      type: "spring",
-      stiffness: 300,
-      damping: 20,
+      staggerChildren: 0.12,
     },
   },
 };
@@ -48,9 +36,9 @@ const cardVariants = {
 const childVariants = {
   hidden: {
     opacity: 0,
-    y: 50,
-    scale: 0.9,
-    filter: "blur(10px)",
+    y: 30,
+    scale: 0.95,
+    filter: "blur(5px)",
   },
   visible: {
     opacity: 1,
@@ -59,7 +47,7 @@ const childVariants = {
     filter: "blur(0px)",
     transition: {
       type: "spring",
-      stiffness: 150,
+      stiffness: 125,
       damping: 15,
       mass: 1,
     },
@@ -67,28 +55,29 @@ const childVariants = {
 };
 
 export default function ProjectCard({ name, image, website, description }: ProjectCardProps) {
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter" || e.key === " ") {
+      window.open(website, "_blank", "noopener,noreferrer");
+    }
+  };
+
   return (
     <motion.div
-      className="bg-gradient-to-br from-gray-900 to-gray-800 flex flex-col items-center justify-center rounded-2xl overflow-hidden shadow-2xl border border-gray-700 perspective-1000"
+      className="bg-gradient-to-br from-gray-900 to-gray-800 flex flex-col items-center justify-center rounded-2xl overflow-hidden shadow-xl border border-gray-700"
       variants={cardVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: "-100px" }}
-      whileHover="hover"
+      viewport={{ once: true, margin: "-50px" }}
     >
       <motion.div variants={childVariants} className="relative w-full overflow-hidden">
-        <motion.div
-          className="absolute inset-0 bg-black opacity-20 z-10"
-          whileHover={{ opacity: 0.1 }}
-          transition={{ duration: 0.3 }}
-        />
+        <div className="absolute inset-0 bg-black opacity-20 z-10" />
         <Image
           src={image}
           alt={name}
           width={1200}
           height={680}
-          quality={100}
-          className="xl:w-[600px] xl:h-[340px] lg:w-[500px] lg:h-[300px] w-full aspect-auto transform transition-transform duration-500 hover:scale-110"
+          quality={90}
+          className="xl:w-[600px] xl:h-[340px] lg:w-[500px] lg:h-[300px] w-full aspect-auto object-cover"
         />
       </motion.div>
 
@@ -102,23 +91,20 @@ export default function ProjectCard({ name, image, website, description }: Proje
         >
           {name}
         </motion.h1>
-        <motion.p className="text-gray-400 mb-4 leading-relaxed" variants={childVariants}>
+        <motion.p className="text-gray-300 mb-5 leading-relaxed" variants={childVariants}>
           {description}
         </motion.p>
         <motion.a
-          className="inline-flex items-center gap-2 px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-600 transition-all duration-300"
+          className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg transition-all duration-300 font-medium"
           href={website}
           target="_blank"
           rel="noopener noreferrer"
           variants={childVariants}
-          whileHover={{
-            scale: 1.05,
-            backgroundColor: "#374151",
-            boxShadow: "0 5px 15px rgba(0,0,0,0.3)",
-          }}
-          whileTap={{ scale: 0.95 }}
+          tabIndex={0}
+          aria-label={`View ${name} project`}
+          onKeyDown={handleKeyDown}
         >
-          <ExternalLink className="w-5 h-5" />
+          <ExternalLink className="w-4 h-4" />
           View Project
         </motion.a>
       </motion.div>
