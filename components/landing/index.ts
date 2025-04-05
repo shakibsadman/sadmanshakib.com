@@ -6,3 +6,4 @@ export { default as Offer } from "./offer";
 export { default as AboutMe } from "./aboutme";
 export { default as FAQSection } from "./faq";
 export { default as FeatureCards } from "./features";
+export { default as BlogSection } from "./blog";
