@@ -6,18 +6,20 @@ import {
   AboutMe,
   FAQSection,
   FeatureCards,
-  BlogSection,
 } from "@/components/landing";
 import { faqData } from "@/data/faq";
 import { getProjects } from "@projects/actions";
-import { getRecentPosts } from "@/app/api/blog/actions";
+import { getNotionDatabaseContents, NotionPage } from '@/app/api/blog/notion';
+import BlogSection from '@/components/landing/blog';
 import { Suspense } from "react";
 
 export default async function Home() {
-  const [data, posts] = await Promise.all([
-    getProjects(),
-    getRecentPosts(3),
-  ]);
+  const databaseId = '1843cfb5f9ce80da828df9c498fa7afc';
+  
+  const notionData = await getNotionDatabaseContents(databaseId);
+  const data = await getProjects();
+
+  const posts = notionData.results.slice(0, 3) as unknown as NotionPage[];
 
   return (
     <div className="bg-background">

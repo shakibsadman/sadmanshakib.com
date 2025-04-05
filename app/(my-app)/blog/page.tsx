@@ -1,37 +1,9 @@
 import React from 'react'
-import { getNotionDatabaseContents } from '@/lib/notion'
+import { getNotionDatabaseContents } from '@/app/api/blog/notion'
 import Link from 'next/link'
-import { ArrowRight, BookOpen } from 'lucide-react'
-
-// Define types for the Notion data
-type NotionPage = {
-  id: string
-  url: string
-  properties: {
-    name: {
-      title: Array<{
-        plain_text: string
-      }>
-    }
-    Type: {
-      select: {
-        name: string
-        color: string
-      } | null
-    }
-    Status: {
-      status: {
-        name: string
-        color: string
-      }
-    }
-    URL: {
-      url: string | null
-    }
-  }
-  created_time: string
-  last_edited_time: string
-}
+import { ArrowRight } from 'lucide-react'
+import PostCard from '@/components/blog/post-card'
+import type { NotionPage } from '@/app/api/blog/notion'
 
 // This is a server component
 export default async function BlogPage() {
@@ -73,65 +45,9 @@ export default async function BlogPage() {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {sortedPosts.map((post) => {
-              const title = post.properties.name.title[0]?.plain_text || 'Untitled'
-              const type = post.properties.Type.select?.name || 'Uncategorized'
-              const status = post.properties.Status.status.name
-              const statusColor = post.properties.Status.status.color
-              const createdDate = new Date(post.created_time).toLocaleDateString()
-              const lastEditedDate = new Date(post.last_edited_time).toLocaleDateString()
-              
-              return (
-                <div 
-                  key={post.id} 
-                  className="group bg-backgroundSecondary/50 rounded-2xl p-6 border border-border backdrop-blur-sm transition-all duration-300 hover:bg-backgroundSecondary/70 hover:shadow-xl hover:shadow-primary/5 flex flex-col h-full"
-                >
-                  <div className="flex-1">
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="p-2 rounded-full bg-primary/10 text-primary">
-                        <BookOpen size={18} />
-                      </div>
-                      <div className="flex gap-2">
-                        {type && (
-                          <span className="px-2 py-1 text-xs rounded-full bg-primary/10 text-primary font-medium">
-                            {type}
-                          </span>
-                        )}
-                        <span className={`px-2 py-1 text-xs rounded-full font-medium ${
-                          statusColor === 'green' ? 'bg-green-500/10 text-green-500' : 
-                          statusColor === 'red' ? 'bg-red-500/10 text-red-500' : 
-                          'bg-gray-500/10 text-gray-500'
-                        }`}>
-                          {status}
-                        </span>
-                      </div>
-                    </div>
-                    
-                    <h2 className="text-xl font-semibold mb-3 text-textPrimary group-hover:text-primary transition-colors">
-                      <Link href={`/blog/${post.id}`} className="hover:underline">
-                        {title}
-                      </Link>
-                    </h2>
-                    
-                    <div className="text-sm text-textSecondary/70 mb-4">
-                      <span>Created: {createdDate}</span>
-                      <span className="mx-2">•</span>
-                      <span>Updated: {lastEditedDate}</span>
-                    </div>
-                  </div>
-                  
-                  <div className="mt-auto pt-4 border-t border-border/50">
-                    <Link 
-                      href={`/blog/${post.id}`}
-                      className="inline-flex items-center text-sm font-medium text-primary hover:underline"
-                    >
-                      Read more
-                      <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                  </div>
-                </div>
-              )
-            })}
+            {sortedPosts.map((post) => (
+              <PostCard key={post.id} post={post} />
+            ))}
           </div>
           
           {sortedPosts.length === 0 && (
