@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { Client } from '@notionhq/client'
 import { BlockObjectResponse, PartialBlockObjectResponse } from '@notionhq/client/build/src/api-endpoints'
+import DynamicCodeBlock from '@/components/blog/dynamic-code-block'
 
 // Initialize Notion client
 const notion = new Client({
@@ -127,13 +128,11 @@ function renderBlockContent(block: any) {
       )
     case 'code':
       return (
-        <pre className="bg-gray-100 dark:bg-gray-800 p-4 rounded-md my-4 overflow-x-auto">
-          <code className="text-sm font-mono text-gray-800 dark:text-gray-200">
-            {block.code.rich_text.map((text: any, index: number) => (
-              <span key={index}>{text.plain_text}</span>
-            ))}
-          </code>
-        </pre>
+        <DynamicCodeBlock 
+          language={block.code.language} 
+          code={block.code.rich_text.map((text: any) => text.plain_text).join('')}
+          caption={block.code.caption?.length > 0 ? block.code.caption[0].plain_text : undefined}
+        />
       )
     case 'quote':
       return (

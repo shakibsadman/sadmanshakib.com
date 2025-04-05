@@ -1,0 +1,192 @@
+/* PrismJS Additional Styling */
+
+:root {
+  --prism-background: #1e1e1e;
+  --prism-text: #d4d4d4;
+  --prism-comment: #6a9955;
+  --prism-punctuation: #d4d4d4;
+  --prism-property: #9cdcfe;
+  --prism-selector: #d7ba7d;
+  --prism-operator: #d4d4d4;
+  --prism-keyword: #569cd6;
+  --prism-function: #dcdcaa;
+  --prism-string: #ce9178;
+  --prism-number: #b5cea8;
+  --prism-class: #4ec9b0;
+  --prism-constant: #4fc1ff;
+  --prism-builtin: #4ec9b0;
+  --prism-important: #569cd6;
+  --prism-namespace: #4ec9b0;
+  --prism-variable: #9cdcfe;
+  --prism-symbol: #b5cea8;
+  --prism-boolean: #569cd6;
+  --prism-regex: #d16969;
+  --prism-inserted: #b5cea8;
+  --prism-line-number: #888888;
+  --prism-line-highlight: rgba(255, 255, 255, 0.07);
+  --prism-border: rgba(255, 255, 255, 0.1);
+}
+
+/* VS Code Dark+ inspired theme */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: var(--prism-text);
+  background: none;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+pre[class*="language-"] {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+  border-radius: 0.5rem;
+  background: var(--prism-background);
+  border: 1px solid var(--prism-border);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: var(--prism-background);
+}
+
+:not(pre) > code[class*="language-"] {
+  padding: 0.1em 0.3em;
+  border-radius: 0.3em;
+  white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: var(--prism-comment);
+}
+
+.token.punctuation {
+  color: var(--prism-punctuation);
+}
+
+.token.namespace {
+  color: var(--prism-namespace);
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol {
+  color: var(--prism-property);
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin {
+  color: var(--prism-string);
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+  color: var(--prism-operator);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: var(--prism-keyword);
+}
+
+.token.function {
+  color: var(--prism-function);
+}
+
+.token.regex,
+.token.important {
+  color: var(--prism-regex);
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+/* Line highlighting */
+pre[data-line] {
+  position: relative;
+}
+
+pre[class*="language-"] > code[class*="language-"] {
+  position: relative;
+  z-index: 1;
+}
+
+.line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: var(--prism-line-highlight);
+  box-shadow: inset 5px 0 0 var(--prism-keyword);
+  z-index: 0;
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+/* Copy button */
+.code-toolbar {
+  position: relative;
+}
+
+.code-toolbar .toolbar-item button {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  color: #999;
+  background: rgba(0, 0, 0, 0.2);
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.code-toolbar:hover .toolbar-item button {
+  opacity: 1;
+}
+
+.code-toolbar .toolbar-item button:hover {
+  color: white;
+  background: rgba(0, 0, 0, 0.3);
+} 
