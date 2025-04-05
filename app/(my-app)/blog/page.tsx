@@ -1,6 +1,7 @@
 import React from 'react'
 import { getNotionDatabaseContents } from '@/lib/notion'
 import Link from 'next/link'
+import { ArrowRight } from 'lucide-react'
 
 // Define types for the Notion data
 type NotionPage = {
@@ -50,8 +51,8 @@ export default async function BlogPage() {
     )
     
     return (
-      <div className="container mx-auto p-4 max-w-5xl">
-        <h1 className="text-3xl font-bold mb-6">Blog</h1>
+      <div className="container mx-auto p-4 max-w-5xl dark:bg-gray-900 light:bg-white">
+        <h1 className="text-3xl font-bold mb-6 text-textPrimary dark:text-white light:text-gray-900">Blog</h1>
         
         <div className="grid gap-6">
           {sortedPosts.map((post) => {
@@ -63,35 +64,44 @@ export default async function BlogPage() {
             const lastEditedDate = new Date(post.last_edited_time).toLocaleDateString()
             
             return (
-              <div key={post.id} className="bg-white rounded-lg shadow-md p-6 border border-gray-200 hover:shadow-lg transition-shadow">
+              <div key={post.id} className="bg-backgroundSecondary/50 dark:bg-gray-800 light:bg-gray-100 rounded-2xl p-6 border border-border dark:border-gray-700 light:border-gray-200 backdrop-blur-sm transition-all duration-300 hover:bg-backgroundSecondary/70 dark:hover:bg-gray-700 light:hover:bg-gray-200 hover:shadow-xl hover:shadow-primary/5">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                   <div className="flex-1">
-                    <h2 className="text-xl font-semibold mb-2">
-                      <Link href={`/blog/${post.id}`} className="text-blue-600 hover:underline">
+                    <h2 className="text-xl font-semibold mb-2 text-textPrimary dark:text-white light:text-gray-900 hover:text-primary transition-colors">
+                      <Link href={`/blog/${post.id}`} className="hover:underline">
                         {title}
                       </Link>
                     </h2>
                     
                     <div className="flex flex-wrap gap-2 mb-3">
                       {type && (
-                        <span className="px-2 py-1 text-xs rounded-full bg-purple-100 text-purple-800">
+                        <span className="px-2 py-1 text-xs rounded-full bg-primary/10 dark:bg-primary/20 light:bg-primary/10 text-primary font-medium">
                           {type}
                         </span>
                       )}
-                      <span className={`px-2 py-1 text-xs rounded-full ${
-                        statusColor === 'green' ? 'bg-green-100 text-green-800' : 
-                        statusColor === 'red' ? 'bg-red-100 text-red-800' : 
-                        'bg-gray-100 text-gray-800'
+                      <span className={`px-2 py-1 text-xs rounded-full font-medium ${
+                        statusColor === 'green' ? 'bg-green-500/10 dark:bg-green-500/20 light:bg-green-500/10 text-green-500' : 
+                        statusColor === 'red' ? 'bg-red-500/10 dark:bg-red-500/20 light:bg-red-500/10 text-red-500' : 
+                        'bg-gray-500/10 dark:bg-gray-500/20 light:bg-gray-500/10 text-gray-500'
                       }`}>
                         {status}
                       </span>
                     </div>
                     
-                    <div className="text-sm text-gray-500">
+                    <div className="text-sm text-textSecondary/70 dark:text-gray-400 light:text-gray-500">
                       <span>Created: {createdDate}</span>
                       <span className="mx-2">•</span>
                       <span>Updated: {lastEditedDate}</span>
                     </div>
+                  </div>
+                  
+                  <div className="md:self-center">
+                    <Link 
+                      href={`/blog/${post.id}`}
+                      className="inline-flex items-center justify-center p-2 rounded-full bg-primary/10 dark:bg-primary/20 light:bg-primary/10 text-primary hover:bg-primary/20 dark:hover:bg-primary/30 light:hover:bg-primary/20 transition-colors"
+                    >
+                      <ArrowRight size={18} />
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -103,9 +113,9 @@ export default async function BlogPage() {
   } catch (error) {
     console.error('Error fetching Notion data:', error)
     return (
-      <div className="container mx-auto p-4">
-        <h1 className="text-3xl font-bold mb-6">Blog</h1>
-        <div className="bg-red-100 p-4 rounded-lg text-red-700">
+      <div className="container mx-auto p-4 dark:bg-gray-900 light:bg-white">
+        <h1 className="text-3xl font-bold mb-6 text-textPrimary dark:text-white light:text-gray-900">Blog</h1>
+        <div className="bg-red-500/10 dark:bg-red-500/20 light:bg-red-500/10 p-4 rounded-lg text-red-500 border border-red-500/20 dark:border-red-500/30 light:border-red-500/20">
           <p>Error loading blog posts. Please check the console for details.</p>
         </div>
       </div>
