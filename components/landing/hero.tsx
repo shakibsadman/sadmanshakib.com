@@ -45,7 +45,7 @@ const wordVariants = {
 
 export default function HeroSection() {
   return (
-    <div className="relative w-full bg-black">
+    <div className="relative w-full bg-background">
       <motion.div
         variants={{
           initial: { opacity: 0, y: -60 },
@@ -65,16 +65,16 @@ export default function HeroSection() {
       </motion.div>
 
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:64px_64px]" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black" />
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background" />
       <motion.div
         initial="initial"
         animate="animate"
         variants={textVariants}
-        className="relative z-10 max-w-5xl mx-auto px-4 pb-16 text-center"
+        className="relative z-10 max-w-5xl mx-auto px-4 pb-24 pt-16 text-center"
       >
         <motion.h1
           variants={wordVariants}
-          className="text-4xl sm:text-8xl font-bold tracking-tight mb-6 text-white"
+          className="text-4xl sm:text-8xl font-bold tracking-tight mb-8 text-textPrimary"
         >
           SaaS MVP for the <br />
           <motion.span
@@ -91,13 +91,13 @@ export default function HeroSection() {
                 },
               },
             }}
-            className="bg-gradient-to-r from-primary to-violet-400 text-transparent bg-clip-text"
+            className="bg-gradient-to-r from-primary via-primary-light to-accent bg-clip-text text-transparent"
           >
             21st Century
           </motion.span>
         </motion.h1>
 
-        <motion.p variants={wordVariants} className="max-w-2xl mx-auto text-xl text-gray-400 mb-12">
+        <motion.p variants={wordVariants} className="max-w-2xl mx-auto text-xl text-textSecondary mb-12">
           The modern way to build your SaaS MVP and get it to market within weeks.
         </motion.p>
 
@@ -106,7 +106,7 @@ export default function HeroSection() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <a target="_blank" rel="noopener noreferrer" href="https://cal.com/sadman-shakib/30min">
-            <Button className="gap-2 text-lg bg-primary hover:bg-primary/90 h-14 w-72 rounded-full text-black">
+            <Button className="gap-2 text-lg bg-primary hover:bg-primary-dark transition-colors duration-300 h-14 w-72 rounded-full text-textPrimary shadow-lg shadow-primary/20">
               <Calendar className="w-6 h-6" />
               Schedule a Call
             </Button>

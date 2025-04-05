@@ -13,34 +13,19 @@ interface ProjectCardProps {
 const cardVariants = {
   hidden: {
     opacity: 0,
-    y: 100,
-    scale: 0.8,
-    rotateX: -15,
-    boxShadow: "0 0 0 rgba(0,0,0,0)",
+    y: 50,
+    scale: 0.95,
   },
   visible: {
     opacity: 1,
     y: 0,
     scale: 1,
-    rotateX: 0,
-    boxShadow: "0 25px 50px rgba(0,0,0,0.3)",
     transition: {
       type: "spring",
-      stiffness: 80,
-      damping: 20,
-      mass: 1.5,
+      stiffness: 100,
+      damping: 15,
       when: "beforeChildren",
-      staggerChildren: 0.15,
-    },
-  },
-  hover: {
-    scale: 1.05,
-    y: -10,
-    boxShadow: "0 35px 70px rgba(0,0,0,0.5)",
-    transition: {
-      type: "spring",
-      stiffness: 300,
-      damping: 20,
+      staggerChildren: 0.1,
     },
   },
 };
@@ -48,20 +33,15 @@ const cardVariants = {
 const childVariants = {
   hidden: {
     opacity: 0,
-    y: 50,
-    scale: 0.9,
-    filter: "blur(10px)",
+    y: 20,
   },
   visible: {
     opacity: 1,
     y: 0,
-    scale: 1,
-    filter: "blur(0px)",
     transition: {
       type: "spring",
       stiffness: 150,
       damping: 15,
-      mass: 1,
     },
   },
 };
@@ -69,57 +49,63 @@ const childVariants = {
 export default function ProjectCard({ name, image, website, description }: ProjectCardProps) {
   return (
     <motion.div
-      className="bg-gradient-to-br from-gray-900 to-gray-800 flex flex-col items-center justify-center rounded-2xl overflow-hidden shadow-2xl border border-gray-700 perspective-1000"
+      className="group relative bg-gradient-to-br from-gray-900/80 to-gray-950 rounded-xl overflow-hidden backdrop-blur-sm border border-gray-800/50 hover:border-gray-700/70 transition-all duration-300"
       variants={cardVariants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: "-100px" }}
-      whileHover="hover"
+      viewport={{ once: true, margin: "-50px" }}
+      
     >
-      <motion.div variants={childVariants} className="relative w-full overflow-hidden">
-        <motion.div
-          className="absolute inset-0 bg-black opacity-20 z-10"
-          whileHover={{ opacity: 0.1 }}
-          transition={{ duration: 0.3 }}
-        />
+      <div className="absolute inset-0 bg-gradient-to-t from-blue-500/5 to-violet-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      
+      <motion.div variants={childVariants} className="relative w-full h-48 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-950/90 z-10" />
         <Image
           src={image}
           alt={name}
           width={1200}
           height={680}
-          quality={100}
-          className="xl:w-[600px] xl:h-[340px] lg:w-[500px] lg:h-[300px] w-full aspect-auto transform transition-transform duration-500 hover:scale-110"
+          quality={90}
+          className="w-full h-full object-cover object-top transform group-hover:scale-105 transition-transform duration-700 ease-out"
         />
+        <div className="absolute top-3 right-3 z-20">
+          <motion.div 
+            className="bg-gray-900/80 backdrop-blur-md p-1.5 rounded-full border border-gray-700/50"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <a href={website} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${name} website`}>
+              <ExternalLink className="w-4 h-4 text-gray-300" />
+            </a>
+          </motion.div>
+        </div>
       </motion.div>
 
       <motion.div
-        className="w-full bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-b-2xl border-t border-gray-700"
+        className="p-5 space-y-3"
         variants={childVariants}
       >
-        <motion.h1
-          className="text-2xl font-bold mb-3 text-white tracking-tight"
+        <motion.h3
+          className="text-xl font-bold text-white tracking-tight"
           variants={childVariants}
         >
           {name}
-        </motion.h1>
-        <motion.p className="text-gray-400 mb-4 leading-relaxed" variants={childVariants}>
+        </motion.h3>
+        <motion.p className="text-gray-400 text-sm leading-relaxed line-clamp-3" variants={childVariants}>
           {description}
         </motion.p>
         <motion.a
-          className="inline-flex items-center gap-2 px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-600 transition-all duration-300"
+          className="inline-flex items-center gap-2 mt-3 text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors"
           href={website}
           target="_blank"
           rel="noopener noreferrer"
           variants={childVariants}
-          whileHover={{
-            scale: 1.05,
-            backgroundColor: "#374151",
-            boxShadow: "0 5px 15px rgba(0,0,0,0.3)",
-          }}
-          whileTap={{ scale: 0.95 }}
+          whileHover={{ x: 3 }}
         >
-          <ExternalLink className="w-5 h-5" />
           View Project
+          <svg className="w-4 h-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 12L10 8L6 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
         </motion.a>
       </motion.div>
     </motion.div>
