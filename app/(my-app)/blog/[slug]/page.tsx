@@ -4,8 +4,8 @@ import { getPageBlocks, getPageMetadata, processBlocks } from '@/app/api/blog/no
 import PostHeader from '@/components/blog/post-header'
 import NotionRenderer from '@/components/blog/notion-renderer'
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   
   try {
     // Fetch page metadata and blocks
