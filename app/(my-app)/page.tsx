@@ -7,6 +7,7 @@ import {
   AboutMe,
   FAQSection,
   FeatureCards,
+  ServicesSection,
 } from "@/components/landing";
 import { faqData } from "@/data/faq";
 import { getProjects } from "@projects/actions";
@@ -26,7 +27,8 @@ export const metadata: Metadata = {
     "Web Development",
     "Startup MVP",
     "SaaS Development",
-    "Sadman Shakib"
+    "Sadman Shakib",
+    "ShakibMVP"
   ],
   openGraph: {
     title: "Sadman Shakib - Full Stack Developer & MVP Specialist",
@@ -64,12 +66,20 @@ const structuredData = {
   "url": "https://sadmanshakib.com",
   "image": "https://sadmanshakib.com/dr_sadman_shakib.jpg",
   "sameAs": [
-    "https://twitter.com/sadmanshakib",
-    "https://linkedin.com/in/sadmanshakib",
-    "https://github.com/sadmanshakib"
+    "https://x.com/drsadmanshakib",
+    "https://linkedin.com/in/drsadmanshakib",
+    "https://github.com/shakibsadman"
   ],
   "knowsAbout": [
     "Next.js",
+    "Next.js 15",
+    "AI",
+    "AI Agent",
+    "AI Agentic",
+    "AI Agentic Development",
+    "AI Agentic Development Services",
+    "AI Agentic Development Services for Startups",
+    "AI Agentic Development Services for Scaleups",
     "React",
     "TypeScript",
     "Web Development",
@@ -110,6 +120,7 @@ export default async function Home() {
       
       <HeroSection />
       <FeatureCards />
+      <ServicesSection />
       <Suspense fallback={<div>Loading...</div>}>
         <ProjectsSection projects={data} />
       </Suspense>
