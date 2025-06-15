@@ -122,7 +122,7 @@ export default function PricingSection() {
               transition={{ delay: 0.3, duration: 0.6 }}
               className="bg-gradient-to-r from-blue-400 to-violet-400 text-transparent bg-clip-text"
             >
-              ShakMVP
+              ShakibMVP
             </motion.span>{" "}
             Your Idea?
           </motion.h2>
