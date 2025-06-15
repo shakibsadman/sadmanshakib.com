@@ -1,0 +1,27 @@
+{
+  "name": "Sadman Shakib - Full Stack Developer",
+  "short_name": "Sadman Shakib",
+  "description": "Full Stack Developer specializing in MVP development for startups and scaleups",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/portfolioLogo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/portfolioLogo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["developer", "portfolio", "business"],
+  "lang": "en",
+  "dir": "ltr"
+} 

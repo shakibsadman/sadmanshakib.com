@@ -1,9 +1,49 @@
 import React from 'react'
+import { Metadata } from 'next'
 import { getNotionDatabaseContents } from '@/app/api/blog/notion'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import PostCard from '@/components/blog/post-card'
 import type { NotionPage } from '@/app/api/blog/notion'
+
+export const metadata: Metadata = {
+  title: 'Blog - Web Development Insights & Tech Tutorials',
+  description: 'Explore Sadman Shakib\'s blog for insights on web development, MVP creation, Next.js tutorials, React tips, and modern tech stack guides. Stay updated with the latest in software development.',
+  keywords: [
+    'web development blog',
+    'Next.js tutorials',
+    'React tips',
+    'MVP development',
+    'full stack development',
+    'programming insights',
+    'tech tutorials',
+    'software engineering'
+  ],
+  openGraph: {
+    title: 'Blog - Web Development Insights & Tech Tutorials',
+    description: 'Explore Sadman Shakib\'s blog for insights on web development, MVP creation, Next.js tutorials, React tips, and modern tech stack guides.',
+    type: 'website',
+    url: 'https://sadmanshakib.com/blog',
+    images: [
+      {
+        url: '/dr_sadman_shakib.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Sadman Shakib Blog - Web Development Insights',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Blog - Web Development Insights & Tech Tutorials',
+    description: 'Explore Sadman Shakib\'s blog for insights on web development, MVP creation, and modern tech stack guides.',
+    images: ['/dr_sadman_shakib.jpg'],
+    creator: '@sadmanshakib',
+  },
+  alternates: {
+    canonical: 'https://sadmanshakib.com/blog',
+  },
+}
 
 // This is a server component
 export default async function BlogPage() {
