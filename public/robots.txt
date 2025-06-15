@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Block admin routes
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /api/
+
+# Allow important pages
+Allow: /blog/
+Allow: /projects/
+
+# Sitemap location
+Sitemap: https://sadmanshakib.com/sitemap.xml 

@@ -140,7 +140,7 @@ export default function PricingSection() {
             <motion.div
               key={plan.name}
               variants={itemVariants}
-              whileHover={{ scale: 1.02, y: -5 }}
+             
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
               className={`relative rounded-2xl p-8 border ${plan.popular
                 ? "border-blue-500/30 bg-gradient-to-b from-blue-900/20 to-gray-900/40"
